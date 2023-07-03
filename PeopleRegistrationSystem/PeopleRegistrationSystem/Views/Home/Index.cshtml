@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Online User Registeration System</h1>
+        </div>
+        <div class="card-body">
+
+            <h4 class="card-text">Welcome to the future of user registration! Say goodbye to paperwork and hello to convenience.</h4>
+
+        </div>
+    </div>
+
+</div>
+
+<form asp-controller="Register" asp-action="userRegister" method="post">
+
+    <button class="btn btn-primary mb-3 mt-3" type="submit">Register User</button>
+</form>
+
+<form asp-controller="Dashboard" asp-action="Index" method="post" style="margin-bottom:300px">
+
+    <button class="btn btn-primary mb-3 mt-3" type="submit">Dashboard</button>
+</form>

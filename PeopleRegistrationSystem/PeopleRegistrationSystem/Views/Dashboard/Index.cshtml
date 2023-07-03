@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Dashboard Page:</h1>
+
+
+<h4>Users:</h4>
+
+@model List<UserViewModel>
+
+
+
+@foreach (var item in Model)
+{
+    <br />
+    <div class="card">
+        <h5 class="card-header">First Name: @item.FirstName <br /> Second Name: @item.SecondName</h5>
+        <div class="card-body">
+            <p class="card-title">Id: @item.Id</p>
+            <p class="card-title">Email: @item.Email</p>
+            <p class="card-title">Gender: @(item.Gender ? "Female" : "Male")</p>
+            <p class="card-title">Nationality: @item.Nationality</p>
+            <p class="card-title">Education Level: @item.EducationLevel</p>
+            <p class="card-title">Have Vehicle License: @(item.HaveVehicleLicense ? "Yes" : "No")</p>
+            <p class="card-title">Address: @item.Address</p>
+            <p class="card-title">Identification Number: @item.IdentificationNumber</p>
+            <p class="card-title">Birth Date: @item.BirthDate)</p>
+        </div>
+        <div style ="margin:10px"><a class="btn btn-primary" asp-controller="dashboard" asp-action="updateUser" asp-route-id="@item.Id">Update</a></div>
+        <div style="margin:10px"><a class="btn btn-danger" asp-controller="dashboard" asp-action="removeUser" asp-route-id="@item.Id">Delete</a></div>
+        
+        
+    </div>
+
+    <br />
+    <br />
+}
+
+
+
